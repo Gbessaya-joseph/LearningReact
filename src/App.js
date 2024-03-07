@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
 
+const title = 'Bonjour les gens'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const showTitle = true
+const handClick = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    console.log(e.target)
+    alert("Je suis une alerte")
+}
+  return  <div className="App">
+    {showTitle && <h1 onClick={handClick} id="hello-world" className="hello-world" style={{color: 'red',
+     background: 'blue', cursor: 'pointer'}}>{title}</h1>}
+    <p>lorem</p>
+
+  </div>
+
 }
 
 export default App;
